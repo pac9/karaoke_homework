@@ -1,12 +1,16 @@
 class Rooms
 
-attr_reader :name
+attr_reader :name, :guest
 
-  def initialise(name)
+  def initialize(name, guest)
     @name = name
+    @guest = guest
 
 
   end
 
+ def guest_has_name(name, guest)
+      p guest.name
+ end
 
 end
