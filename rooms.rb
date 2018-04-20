@@ -1,8 +1,9 @@
 class Rooms
 
-attr_reader
+attr_reader :name
 
-  def initialise
+  def initialise(name)
+    @name = name
 
 
   end

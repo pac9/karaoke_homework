@@ -1,9 +1,9 @@
 class Songs
 
-attr_reader
+attr_reader :title
 
-  def initialize
-
+  def initialize(title)
+     @title = title
   end
 
 
