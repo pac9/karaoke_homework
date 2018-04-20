@@ -5,7 +5,7 @@ attr_reader :name
   def initialize(name)
     @name = name
     @guest = []
-
+    @song = []
 
   end
 
@@ -13,17 +13,21 @@ attr_reader :name
  #      p guest.name
  # end
 
- def check_guest_in(guest)
-  @guest << guest
- end
+   def check_guest_in(guest)
+      @guest << guest
+   end
 
- def check_guest_out(guest)
-  for name in @guest
-    if name == guest
-      @guest.shift
-    end
-  end
+   def check_guest_out(guest)
+      for name in @guest
+        if name == guest
+           @guest.delete(guest)
+        end
+      end
+   end
 
- end
+   def song_playing(song)
+     @song << song
+
+   end
 
 end
