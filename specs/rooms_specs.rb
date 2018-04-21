@@ -40,8 +40,10 @@ class TestRooms < MiniTest::Test
 #was this the correct place to put .length?
   def test_guest_can_check_out
     @rooms.check_guest_in(@guests)
-    result = @rooms.check_guest_out(@guests1)
-    assert_equal(2, result.length)
+    @rooms.check_guest_out(@guests1)
+    @rooms.check_guest_out(@guests2)
+    result = @rooms.check_guest_out(@guests)
+    assert_equal(1, result.length)
   end
 
   def test_song_playing
