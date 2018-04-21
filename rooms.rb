@@ -20,8 +20,6 @@ attr_reader :name
       @guest << person
     end
   # p guest
-
-
    end
 
    def check_guest_out(guest)
@@ -30,13 +28,14 @@ attr_reader :name
            @guest.delete(guest)
         end
       end
-      p @guest
+      # p @guest
    end
 
    def song_playing(song)
      for track in song
        @song << song
      end
+     # p @song
    end
 
 end

@@ -12,7 +12,7 @@ class Bar
     for room_name in room
      @room << room
    end
-     p @room
+     # p @room
   end
 
 
