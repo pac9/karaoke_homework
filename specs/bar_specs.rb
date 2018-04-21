@@ -6,12 +6,13 @@ require_relative('../rooms')
 class TestBar < MiniTest::Test
 
   def setup
-     @bar = Bar.new("Karaoke Bar", "Rock")
-     # @rooms1 = Rooms.new("Rock")
-     # @rooms2 = Rooms.new("Pop")
-     # @rooms3 = Rooms.new("Ballads")
-     # rooms = [@rooms1, @rooms2, @rooms3]
+
+     @rooms1 = Rooms.new("Rock")
+     @rooms2 = Rooms.new("Pop")
+     @rooms3 = Rooms.new("Ballads")
+     @rooms = [@rooms1, @rooms2, @rooms3]
      # @rooms = Rooms.new(rooms)
+     @bar = Bar.new("Karaoke Bar")
   end
 
 
@@ -20,10 +21,15 @@ class TestBar < MiniTest::Test
     assert_equal("Karaoke Bar", @bar.name)
   end
 
-  def test_bar_has_rooms
+  # def test_bar_has_rooms
+  #
+  #
+  #   assert_equal("Rock", @bar.room)
+  # end
 
-
-    assert_equal("Rock", @bar.room)
+  def test_rooms_in_bar
+    result = @bar.rooms_in_bar(@rooms)
+    assert_equal(3, result.length)
   end
 
 end
