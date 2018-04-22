@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../bar')
 require_relative('../rooms')
+require_relative('../guests')
 
 class TestBar < MiniTest::Test
 
@@ -23,7 +24,7 @@ class TestBar < MiniTest::Test
      @rooms = [@rooms1, @rooms2, @rooms3]
      # @rooms = Rooms.new(rooms)
 
-     @bar = Bar.new("Karaoke Bar")
+     @bar = Bar.new("Karaoke Bar", 5.00)
   end
 
 
@@ -37,10 +38,23 @@ class TestBar < MiniTest::Test
   #
   #   assert_equal("Rock", @bar.room)
   # end
+  def test_bar_has_till
+   assert_equal(5.00, @bar.till)
+  end
 
   def test_rooms_in_bar
     result = @bar.rooms_in_bar(@rooms)
     assert_equal(3, result.length)
   end
+
+  def test_guest_pays_entrance_fee
+    @bar.guest_pays_entrance_fee(@entrance_fee)
+    assert_equal(10.00, @bar.till)
+  end
+
+  # def test_guest_gets_admittance
+  #    result = @bar.test_guest_gets_admittance(@guests1)
+  #    assert_equal(1, result.length)
+  # end
 
 end
