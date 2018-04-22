@@ -7,7 +7,7 @@ require_relative('../guests')
 class TestBar < MiniTest::Test
 
   def setup
-    # @guests1 = Guests.new("John")
+    @guests1 = Guests.new("John", 50.00)
     # @guests2 = Guests.new("Gavin")
     # @guests3 = Guests.new("Jamie")
     # @guests = [@guests1, @guests2, @guests3]
@@ -52,9 +52,9 @@ class TestBar < MiniTest::Test
     assert_equal(10.00, @bar.till)
   end
 
-  # def test_guest_gets_admittance
-  #    result = @bar.test_guest_gets_admittance(@guests1)
-  #    assert_equal(1, result.length)
-  # end
+  def test_guest_gets_admittance
+     result = @bar.guest_gets_admittance(@guests1)
+     assert_equal(1, result.length)
+  end
 
 end

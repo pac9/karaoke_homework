@@ -23,9 +23,11 @@ class Bar
      p @till
   end
 
-  # def guest_gets_admittance(guest)
-  #    @guest << guest
-  #    p @guest
-  #  end
+  def guest_gets_admittance(guest)
+     @guests << guest
+     p @guests
+   end
+   #this put in the wallet amount as well.  How do I get only the name in?
+   #change Guests to hashes?
 
 end
