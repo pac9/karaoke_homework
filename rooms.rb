@@ -25,11 +25,12 @@ attr_reader :name
    end
 
 
-   def check_room_can_admit_more_guests(guests)
-        # @rooms.check_guest_in(guest)
-       if (@guest.length) < 4
-         return true
-       end
+   def check_room_can_admit_more_guests(guest)
+      check_guest_in(guest)
+      return @guest.length < 5
+
+
+       p @guest
   end
 
 

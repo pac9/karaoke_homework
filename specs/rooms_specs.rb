@@ -59,5 +59,12 @@ class TestRooms < MiniTest::Test
      assert_equal(true, result)
   end
 
-
+  # def test_capacity_of_room_not_reached__returns_false
+  # #
+  # #
+  #   result = @rooms.check_room_can_admit_more_guests(@guests)
+  # #
+  #    assert_equal(false, result)
+  # end
+  #this works if change maximum capacity of room in rooms.rb but how could I have tested true and false? 
 end
