@@ -1,12 +1,14 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../guests')
+require_relative('../bar')
 
 class TestGuests < MiniTest::Test
 
   def setup
     @guests = Guests.new("John", 50.00)
-    @bar= 5.00
+    @bar =  5.00
+    #how would I have set up the entrance fee call from Bar
     # @guests2 = Guests.new("Gavin")
     # @guests3 = Guests.new("Jamie")
   end
@@ -24,6 +26,7 @@ class TestGuests < MiniTest::Test
     @guests.pay_entrance_fee(@bar)
     assert_equal(45.00, @guests.wallet())
   end
+
 
 
   def test_sufficient_funds__true_if_enough

@@ -9,9 +9,9 @@ class TestRooms < MiniTest::Test
   def setup
     @rooms = Rooms.new("Rock")
 
-    @guests1 = Guests.new("John")
-    @guests2 = Guests.new("Gavin")
-    @guests3 = Guests.new("Jamie")
+    @guests1 = Guests.new("John", 50.00)
+    @guests2 = Guests.new("Gavin", 30.00)
+    @guests3 = Guests.new("Jamie", 40.00)
     @guests = [@guests1, @guests2, @guests3]
 
     @songs1 = Songs.new("Paradise City")
@@ -50,5 +50,14 @@ class TestRooms < MiniTest::Test
     result = @rooms.song_playing(@songs)
     assert_equal(3, result.length)
   end
+
+  def test_capacity_of_room_not_reached__returns_true
+  #
+  #
+    result = @rooms.check_room_can_admit_more_guests(@guests)
+  #
+     assert_equal(true, result)
+  end
+
 
 end

@@ -49,7 +49,9 @@ class TestBar < MiniTest::Test
 
   def test_guest_pays_entrance_fee
     @bar.guest_pays_entrance_fee(@entrance_fee)
+
     assert_equal(10.00, @bar.till)
+    # assert_equal(45.00, @guests1.wallet)
   end
 
   def test_guest_gets_admittance
